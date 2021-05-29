@@ -1,0 +1,13 @@
+,Étape ,  Éléments à Définir ,  Notre cas expérimental
+1. ,  Définition du matériau,  ,  Acide Polylactique (PLA)
+2.1 ,Procédés de Référence,  Chaines de recyclage ,  Quatre chaînes de recyclage
+2.1 ,Procédés de Référence,  Propriété à évaluer ,  Propriétes mécaniques
+2.2,  Matière première ,  Procédé de fabrication ,  Extrusion
+2.2, pour l'Impression 3D, Paramètre de Qualité ,  Diamètre du Filament
+3.1, Fabrication ,  Normes ,  ISO 527-1B
+3.1, Standard,  Internationaux ,  (Propriétés Mécaniques)
+3.2, Fabrication ,  Caractérisation des Imprimantes,  FoldaRap, Mondrian
+3.2, Impression 3D , Paramètres ,  Deux type d'éprouvettes (0/90 - 45/45)
+4.,  Evaluation ,  Parametrès ,  Elastic Modulus, tensile strength and tensiles strain values
+5, Recycle ,  Procédé ,  Broyage
+5, Recycle ,  Granulométrie ,  0.2-2mm
