@@ -3,14 +3,14 @@ title: "Approche méthodologique pour évaluer la faisabilité du recyclage des 
 abstract: |
  
 output:
-   bookdown::html_document2:
-     fig_caption: yes
-#  bookdown::pdf_document2:
-#    keep_tex: true
-  # bookdown::word_document2:
-  #   toc: true
-  #   fig_caption: yes
-  #   reference_docx: "Template.docx"
+   # bookdown::html_document2:
+   #   fig_caption: yes
+ # bookdown::pdf_document2:
+ #   keep_tex: true
+  bookdown::word_document2:
+    toc: false
+    fig_caption: yes
+    reference_docx: "Template.docx"
 link-citations: yes
 linkcolor: blue
 bibliography: library.bib
@@ -43,7 +43,7 @@ URL = c('https://raw.githubusercontent.com/fabbiocrux/Figures/main/')
 
 # Résumé {.unnumbered }
 
-Depuis de début du $XXI^{ème}$ siècle, nous assistons à la démocratisation de la fabrication additive , en même temps que l’émergence du mouvement « Open Source Hardware», à savoir le développement de la technologie de manière ouverte par tout à chacun. La conjonction de ces deux phénomènes a fait émerger de nombreuses  opportunités  pour la conception et la fabrication dans l’industrie manufacturière, mais aussi pour le développement d’activités connexes telles que le recyclage des matières thermoplastiques. Dans ce chapitre nous proposons une méthodologie générale permettant le recyclage de polymères thermoplastiques dans un  contexte de fabrication additive. La méthodologie développée a été utilisée en considérant  la matière plastique à ce jour la plus utilisée dans l’impression 3D open source à savoir l’acide polylactique (PLA). Nous évaluons  le niveau de dégradation de la matière à travers l’ensemble du procédé grâce à la caractérisation des propriétés mécaniques et physico-chimiques, et concluons qu’il est possible de recycler le PLA plusieurs fois pour le réutiliser en impression 3D. Enfin, nous étudierons les implications pour la diffusion de ce type de recyclage, et proposons en perspective d’étudier le recyclage en circuit court d’autres polymères thermoplastiques.   
+Depuis de début du $XXI^{ème}$ siècle, nous assistons à la démocratisation de la fabrication additive, en même temps que l’émergence du mouvement « Open Source Hardware», à savoir le développement de la technologie de manière ouverte par tout à chacun. La conjonction de ces deux phénomènes a fait émerger de nombreuses  opportunités  pour la conception et la fabrication dans l’industrie manufacturière, mais aussi pour le développement d’activités connexes telles que le recyclage des matières thermoplastiques. Dans ce chapitre nous proposons une méthodologie générale permettant le recyclage de polymères thermoplastiques dans un  contexte de fabrication additive. La méthodologie développée a été utilisée en considérant  la matière plastique à ce jour la plus utilisée dans l’impression 3D open source à savoir l’acide polylactique (PLA). Nous évaluons  le niveau de dégradation de la matière à travers l’ensemble du procédé grâce à la caractérisation des propriétés mécaniques et physico-chimiques, et concluons qu’il est possible de recycler le PLA plusieurs fois pour le réutiliser en impression 3D. Enfin, nous étudierons les implications pour la diffusion de ce type de recyclage, et proposons en perspective d’étudier le recyclage en circuit court d’autres polymères thermoplastiques.   
 	
 **Mot clés :** Recyclage des Polymères, Fabrication Additive, Open-Source, Impression 3D,  Acide Polylactique (PLA), RepRap.	
 
@@ -51,7 +51,7 @@ Depuis de début du $XXI^{ème}$ siècle, nous assistons à la démocratisation 
 
 # Introduction
 
-En ce début de $XXI^{\grave{e}me}$ siècle, considérer qu’aujourd’hui encore, la technique seule transformerait la société tout entière, est clairement une leurre. Certes, les révolutions techniques sont là : explosion de l’internet, interconnexion et échanges entre personnes (peer to peer), apparition de nouvelles formes d’énergie, de nouveaux procédés de production, de nouveaux matériaux etc..., mais l’homme n’est plus un simple consommateur Keynésien sensible uniquement au prix et aux incitations de l’état. Il souhaite désormais, être acteur et participer à l’utilisation des nouvelles technologies mais de manière raisonnée et en intégrant les grands enjeux sociétaux tels que le partage et la sauvegarde des ressources et matières premières.
+En ce début de $XXI^{\grave{e}me}$ siècle, considérer qu’aujourd’hui encore, la technique seule transformerait la société tout entière, est clairement un leurre. Certes, les révolutions techniques sont là : explosion de l’internet, interconnexion et échanges entre personnes (peer to peer), apparition de nouvelles formes d’énergie, de nouveaux procédés de production, de nouveaux matériaux etc... Il souhaite désormais, être acteur et participer à l’utilisation des nouvelles technologies mais de manière raisonnée et en intégrant les grands enjeux sociétaux tels que le partage et la sauvegarde des ressources et matières premières.
 
 Dans le cadre de nos travaux nous présentons comment une révolution technologique telle que la fabrication additive (FA) open source peut se développer tout en intégrant les défis sociétaux actuels et plus particulièrement les enjeux environnementaux. En effet cette dernière, aussi connue comme *impression 3D open-source (OS)* est l’une des technologies identifiées comme ayant un fort potentiel d’impact sur les systèmes de production, mais aussi plus largement, sur notre style de vie dans les années à venir. Sa principale particularité par rapport à la FA classique est le caractère collaboratif de l’open source qui permet des évolutions rapides et créatives, et ceci à moindre coût. Dans le cadre de ces travaux, nous préconiserons dans un premier temps ce qu’est la FA au sens large et nous proposerons un état de l’art des études menées sur le recyclage dans le contexte de la FA. 
 <!-- Puis nous présenterons les spécificités liés au contexte open source et positionnerons les machines de FA utilisées dans ce contexte, en effet contrairement à la FA additive classique professionnel dont la robustesse des machines est assurée par les fabricants; nous devons dans un premier temps nous interroger sur les possibilités et limites des machines utilisées dans le contexte open source.  -->
@@ -64,7 +64,7 @@ Pour finir nous conclurons et rappellerons l’ensemble des avancées obtenu au 
 
 ## La Fabrication Additive (FA) commercial {#la-fabrication-additive-fa-commercial }
 
-La fabrication additive est le nom donné pour *l’ensemble des procédés permettant de fabriquer, couche par couche et par ajout de matière, d’un objet physique à partir d’un objet numérique*>> [@Laverne2016; @ASTM2012].
+La fabrication additive est le nom donné pour *l’ensemble des procédés permettant de fabriquer, couche par couche et par ajout de matière, d’un objet physique à partir d’un objet numérique* [@Laverne2016; @ASTM2012].
 Cette approche contraste avec les procédés traditionnels par enlèvement ou déformation de la matière tels que l’usinage, la fonderie ou la forge. 
 Ce principe est la base de toutes les machines de fabrication additive, avec quelques variations en fonction de la matière première utilisée, la technique pour la création de couches et le moyen physique pour agglomérer les couches déposées.
 
@@ -73,12 +73,13 @@ Cependant, il faut remarquer que le principe physique sur lequel repose la FA a 
 Il consiste à réaliser un produit grâce à un empilement successif de strates. La préparation de la maquette numérique permet de définir les sections de l’objet 3D à réaliser par son découpage successif par des plans parallèles. 
 La distance entre chaque section correspond à l’épaisseur d’une couche. Pour reconstituer l’objet, les sections sont empilées de façon séquentielle les unes sur les autres.
 
-Une approche usuelle pour classer les différents types de technologies de la FA, est à travers  la prise en compte de l’état initial de la matière première utilisée. Dans ce travail nous ne considérerons pas les procédés impliquant les matières métalliques et nous ferons  un focus sur  sur les procédés quiutilisent les polymères tel que visible dans la classification proposée à la la figure \@ref(fig:am-processes).
+Une approche usuelle pour classer les différents types de technologies de la FA, est à travers de la prise en compte de l’état initial de la matière première utilisée. Dans ce travail nous ne considérerons pas les procédés impliquant les matières métalliques et nous ferons  un focus sur  sur les procédés quiutilisent les polymères tel que visible dans la classification proposée à la la figure \@ref(fig:am-processes).
 
 
-```{r am-processes, fig.cap="Classification des technologies de la FA. Adaptation de [ @CruzSanchez2020]"}
-knitr::include_graphics(paste0(URL, "AM/AM-Processes-00.png"))
-#knitr::include_graphics("Figures/Francais/AM-processes.pdf")
+```{r am-processes, fig.cap="Classification des technologies de la FA. Adaptation de [@CruzSanchez2020]"}
+#knitr::include_graphics(paste0(URL, "AM/AM-Processes-00-fr.png"))
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/AM/AM-Processes-00-fr.png", "Figures/AM-Processes-00-fr.png")
+knitr::include_graphics("Figures/AM-Processes-00-fr.png")
 ```
 
 
@@ -91,8 +92,9 @@ Le principe de cette technologie réside dans déposition d’un fil de matière
 Depuis le milieu des années 2000, une nouvelle forme de FA a émergé grâce à la démocratisation de cette technologie pour des communautés différentes de celles des entreprises et des communautés de la recherche. La notion de FA open-source (aussi connue sous le terme *d'Impression 3D open-source (OS)*) est en train de se positionner comme une option viable de fabrication au vu de la conjonction de certains éléments tels que (1) l'expiration des premiers brevets protégeant la technologie commercial de la FA (notamment le Fused Deposition Modeling -FDM-), (2) l'évolution des technologies d'information et communication, et (3) les modes de développement et production basés sur le travail collaboratif (common-based peer production [@Grodzinsky2006]).
 
 ```{r darwing-reprap, fig.cap="Premier machine *RepRap* appelée 'Darwin' -Mai 2007-", out.width='400px', fig.align='center'}
-knitr::include_graphics(paste0(URL, 'AM/Printers/FFF/Darwin-00.jpg'))
-#knitr::include_graphics("Figures/Francais/Darwing-RepRap.jpg")
+#knitr::include_graphics(paste0(URL, 'AM/Printers/FFF/Darwin-00.jpg'))
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/AM/Printers/FFF/Darwin-00.jpg", "Figures/Darwing-RepRap.jpg")
+knitr::include_graphics("Figures/Darwing-RepRap.jpg")
 ```
 
 
@@ -113,8 +115,9 @@ C'est pour cela, que la machine RepRap peut être définie comme *une machine ci
 La Figure \@ref(fig:3dp-growth) confirme cette croissance exponentielle de ce type de machines. Dans un travail récent, @Ford2014, positionne ce type de technologies open-source comme étant les machines de fabrication additive, les plus utilisées à l’heure actuelle.
 
 ```{r 3dp-growth, fig.cap="Nombre de ventes de machines open-source. Source Wohlers Report 2016", out.width='400px', fig.align='center'}
-knitr::include_graphics(paste0(URL, 'AM/3DP-growth.png'))
-#knitr::include_graphics("Figures/Francais/3DP-Growth.jpg")
+#knitr::include_graphics(paste0(URL, 'AM/3DP-growth.png'))
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/AM/3DP-growth.png", "Figures/3DP-growth.png")
+knitr::include_graphics("Figures/3DP-growth.png")
 ```
 
 
@@ -136,7 +139,6 @@ table_1 %>% flextable() %>%
 
 ## Recyclage de polymères {#recyclage-de-polymères }
 
-Le developpment de polymères  
 
 Le développement de matériaux polymères a permis la fabrication d’une large gamme de produits peu coûteux, de faible poids et de haute performance et il est devenu un élément essentiel du développement technologique et sociétal [@Andrady2009]. 
 Cependant, l’un des principaux problèmes réside dans l’impact environnemental des résidus de plastique en raison de leur longévité qui peut atteindre plusieurs décennies  [@Hopewell2009].
@@ -149,8 +151,9 @@ Le recyclage mécanique est défini comme un processus qui permet de réutiliser
 En ce sens, le couplage de tests de caractérisation avec de multiples procédés d’extrusion ou de moulage par injection est une approche éprouvée pour évaluer la recyclabilité de matériaux polymères afin de simuler le cycle de vie prolongé des produits recyclés.  La figure \@ref(fig:Mechanical-Recycling-Fr) présente un schéma générale de cette approche:
 
 ```{r Mechanical-Recycling-Fr, out.width='300px', fig.cap="Étapes du recyclage mécanique"}
-knitr::include_graphics(paste0(URL, 'Recycling/fr/Multiple-Processing.jpg'))
-#knitr::include_graphics("Figures/Francais/Multiple-Processing.pdf")
+#knitr::include_graphics(paste0(URL, 'Recycling/fr/Multiple-Processing.jpg'))
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Recycling/fr/Multiple-Processing.jpg", "Figures/Multiple-Processing.jpg")
+knitr::include_graphics("Figures/Multiple-Processing.jpg")
 ```
 
 
@@ -161,8 +164,9 @@ Il est nécessaire de définir l’étape *Évaluation* afin d’avoir une quant
 Dans le cas de matière plastique recyclé, les travaux de @Karlsson2004 et @Vilaplana2008 ont identifié trois axes majeurs pour l'évaluation de la qualité qui peuvent être résumées de la manière suivante:
 
 ```{r Quality-Recycling-Fr, out.width='350px', fig.cap="Cadre d'évaluation de la matière plastique recyclé."}
-knitr::include_graphics(paste0(URL, 'Recycling/fr/Quality-Recycling.jpg'))
-#knitr::include_graphics("Figures/Francais/Quality-Recycling.pdf")
+#knitr::include_graphics(paste0(URL, 'Recycling/fr/Quality-Recycling.jpg'))
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Recycling/fr/Quality-Recycling.jpg", "Figures/Quality-Recycling.jpg")
+knitr::include_graphics("Figures/Quality-Recycling.jpg")
 ```
 
 
@@ -201,9 +205,10 @@ Ce concept consiste en l’utilisation de déchet plastique pour les transformer
 Certains projets tels que Precious plastic[^3] [@Hakkens2016], Plastic Bank [^2] sont aujourd’hui basés sur ce concept.
 La figure \@ref(fig:slr-methodology) présente le système technique qui doit être viabilisé pour le développement d’un circuit court afin d’utiliser la technologie d’impression 3D comme vecteur de valorisation des déchets à petit échelle.
 
-```{r slr-methodology, fig.cap="Cadre conceptueldu processus techniquesur le récyclage distribué "}
-knitr::include_graphics(paste0(URL, 'DRAM/DRAM-10.png'))
-#knitr::include_graphics("Figures/Francais/SLR-methodology.pdf")
+```{r slr-methodology, fig.cap="Cadre conceptuel du processus technique sur le récyclage distribué"}
+#knitr::include_graphics(paste0(URL, 'DRAM/DRAM-10.png'))
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/DRAM/DRAM-10.png", "Figures/DRAM-10.png")
+knitr::include_graphics("Figures/DRAM-10.png")
 ```
 
 L’intérêt principal de cette approche est la réduction des coûts et des émissions de gaz à effet de serre liés à la collecte et au transport des déchets ainsi qu’à l’impact environnemental de la fabrication de pièces en plastique sur mesure.  
@@ -249,14 +254,18 @@ Cette méthodologie permet de comparer la dégradation de la matière en utilisa
 La figure \@ref(fig:Recycling-Methodology-Fr) illustre la méthodologie proposée.
 
 ```{r Recycling-Methodology-Fr, out.width='100%', fig.cap="Méthodologie pour évaluer la faisabilité de recyclage dans la FA open-source."}
-knitr::include_graphics(paste0(URL, 'Recycling/fr/Recycling-Methodology.jpg'))
-#knitr::include_graphics("Figures/Francais/Recycling-Methodology.pdf")
+#knitr::include_graphics(paste0(URL, 'Recycling/fr/Recycling-Methodology.png'))
+
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Recycling/fr/Recycling-Methodology.png", "Figures/Recycling-Methodology-Fr.png")
+
+knitr::include_graphics("Figures/Recycling-Methodology-Fr.png")
+
 ```
 
 
 Chaque étape sera explicitée dans les sous-section suivantes
 
-## Etape 1: "Définition du matériau"
+## Étape 1: "Définition du matériau"
 
 Le but principal de cette étape, appelé ***"Définition du matériau"*** (figure \@ref(fig:Recycling-Methodology-Fr)) est la caractérisation du la matière première à étudier. Les caractéristiques données par le fournisseur du polymère doivent être prises en compte pour l’établissement initial des conditions opératoires. 
 
@@ -267,15 +276,14 @@ De même, la quantité de matière nécessaire totale pour l’étude globale do
 - Définition du nombre de cycles à tester.
 - Estimation de la perte de matière éventuelle pendant les cycles de recyclage, afin de prévoir dès le début de l'expérimentation les quantités adéquates de matière.
 
-## Etape 2 : "Définition du Procédé de fabrication"
+## Étape 2 : "Définition des procédés"
 
 Cette étape est divisée en deux parties : 
 
-1. ***Identification du procédé de recyclage*** : 
+1. ***Identification des procédés de recyclage*** : 
 Il s’agit de l’identification des technologies de recyclage qui seront utilisées pour la caractérisation des propriétés du polymère recyclé. Afin de mettre en évidence les effets des différents procédés sur le matériau, au moins quatre chaînes de recyclage sont nécessaires pour comparer la dégradation du matériau :
 
   - *Procédé de Référence* :  Il est utilisé comme une référence de la dégradation subit par le matériau recyclé. 
-
   - *3D Printing* : Il est utilisé pour évaluer la dégradation du matériau à la suite du processus d’impression 3D avec des échantillons réalisés à l’aide d’une imprimante 3D pour un jeu de paramètres établi..
   - *Feedstock* : Il est utilisé pour évaluer l’impact de la dégradation dû à la fabrication de la matière première pour les machines d’impression 3D considérées (c’est-à-dire les filaments, les granules, la poudre, etc \...). 
   - *3DP (Référence)* : Il est utilisé pour évaluer la dégradation du matériau dû au processus d’impression 3D en utilisant l’équipement standard. 
@@ -287,28 +295,27 @@ Pendant cette étape, l’expérimentateur doit déterminer son choix, en sélec
 Le but de cette étape est d’identifier le(s) procédé(s) requis pour la fabrication de la matière première pour l’imprimante. Donc, la caractérisation de ces procédés et l’établissement des conditions opératoires est indispensable afin de définir les différentes propriétés. 
 De plus, une définition de la qualité de la matière obtenue est essentielle afin de garantir la qualité pendant le processus d’impression. 
 
-## Etape 3 : "Fabrication des échantillons"
+## Étape 3 : "Fabrication des échantillons"
 
-Il y a deux buts principaux dans cette étape : 
-
-D’abord, deux types de procédés sont proposés afin de comparer la dégradation de la matière : les procédés *Standard* et *l'Impression 3D*:
+Deux types de procédés sont proposés afin de comparer la dégradation de la matière : les procédés *Standard* et *l'Impression 3D*:
 
   - *"Standard"*: Ce procédé servira de référence pour comparer les résultats obtenus de dégradation avec le procédé d’impression 3D. Il est nécessaire de caractériser l’équipement et définir les conditions opératoires à utiliser pour la fabrication des échantillons qui seront la référence de dégradation. C’est la raison pour laquelle, il est impératif d’identifier les normes internationales par rapport aux propriétés sélectionnées dans l’étape précédente.
 
   - *"Impression 3D"*: Dans un premier moment, le but est de caractériser l'imprimante open-source utilisé dans l'expérimentation. 
-Dans un deuxième moment, la définition des paramètres de fabrication pour les échantillons. Une revue de la littérature sur la propriété sélectionnée dans le contexte de fabrication additive commerciale peut donner un aperçu initial des paramètres importants à considérer.
+Dans un deuxième moment, la définition des paramètres de fabrication pour les échantillons. 
+Une revue de la littérature sur la propriété sélectionnée dans le contexte de fabrication additive commerciale peut donner un aperçu initial des paramètres importants à considérer.
 
-## Etape 4: "Évaluation" {#Step4}
+## Étape 4: "Évaluation" {#Step4}
 
 L'objectif principal  de cette étape est la définition des paramètres qui décrivent les propriétés ciblées et la définition de l’équipement sélectionné pour l’évaluation. Des tests sont effectués afin de recueillir les données selon les standards internationaux, et en considérant également l’ensemble des échantillons selon les étapes de recyclage proposées. 
 
-## Etape 5: "Recyclage"{#Step5}
+## Étape 5: "Recyclage"{#Step5}
 
 Finalement, le but de cette étape est de conditionner la matière recyclée pour le retraitement. Le processus de recyclage est réalisé individuellement pour chaque chaîne de recyclage. Une caractérisation de l’équipement de recyclage utilisé et une description des caractéristiques du matériau recyclé obtenu sont réalisées. 
 
 # Cas d’application : Recyclage de l’Acide Polylactique (PLA) pour l’Impression 3D de type FFF. 
 
-## Etape 1 - Définition du Matériau: L'acide Polylactique (PLA)
+## Étape 1 - Définition du Matériau: L'acide Polylactique (PLA)
 
 Nous appliquons la méthodologie présentée dans la figure  \@ref(fig:Recycling-Methodology-Fr)à un cas particulier. 
 Le matériau sélectionné est l’acide polylactique (PLA) type 4043D (NatureWorks). Ce matériau est destiné à la fabrication de matière première pour les imprimantes 3D selon les spécifications du fabricant. 
@@ -318,15 +325,16 @@ Le PLA est un polyester aliphatique thermoplastique obtenue à partir des ressou
 Le PLA offre de nombreux avantages  pour une large gamme d’applications de produits tels que des bouteilles, des plateaux, des conteneurs, entre autres.  
 
 
-## Etape 2 - Assignation des processus
-### Processus de Réference
+## Étape 2 - Définition des procédés
+### Procédés de recyclage
 
 Une adaptation du processus de recyclage mécanique a été fait afin de définir les chaînes de recyclages.
 La figure \@ref(fig:Recycling-Process-Chains-Fr) présente les quatre chaînes de recyclage qui ont pour but final de qualifier la dégradation des propriétés mécaniques dû à l'effet des différents procédés. 
 
 ```{r Recycling-Process-Chains-Fr, fig.cap="Chaînes de recyclage pour évaluer la dégradation du matériau."}
-knitr::include_graphics(paste0(URL, 'Recycling/fr/Recycling-Process-Chains.jpg'))
-#knitr::include_graphics("Figures/Francais/Recycling-Process-Chains.pdf")
+#knitr::include_graphics(paste0(URL, 'Recycling/fr/Recycling-Process-Chains.jpg'))
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Recycling/fr/Recycling-Process-Chains.jpg", "Figures/Recycling-Process-Chains.jpg")
+knitr::include_graphics("Figures/Recycling-Process-Chains.jpg")
 ```
 
 Nous avons défini l’étape *Matériau* dans la section précédente, en supposant que nous partons de matériaux vierges pour effectuer le processus de recyclage. 
@@ -351,9 +359,11 @@ Cette valeur est une donnée d’entrée pour notre processus d’impression.
 Pour les besoins de cette expérience, nous considérerons ce processus comme une somme de trois systèmes, à savoir (I) le système d’alimentation, (II) le processus d’extrusion et (III) le système de convoyage, comme le montre la figure  \@ref(fig:extrusion).
 
 
-```{r extrusion, fig.cap="Procédé d’extrusion pour la création de filament ", out.width='80%'}
-knitr::include_graphics(paste0(URL, 'Extrusion-process/Extrusion-process-00.png'))
-#knitr::include_graphics("Figures/Francais/Recycling-Process-Chains.pdf")
+```{r extrusion, fig.cap="Procédé d’extrusion pour la création de filament ", out.width='100%'}
+#knitr::include_graphics(paste0(URL, 'Extrusion-process/Extrusion-process-00.png'))
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Extrusion-process/Extrusion-process-00.png", "Figures/Extrusion-process-00.png")
+
+knitr::include_graphics("Figures/Extrusion-process.jpg")
 ```
 
 
@@ -369,18 +379,21 @@ Le processus d'extrusion est réalisé afin de fabriquer le filament utilisé da
 Enfin, un système de convoyeur a été adapté afin de contrôler correctement la vitesse de reprise du filament après le processus d’extrusion. Enfin, un système de convoyeur à bande est utilisé pour refroidir (par convection naturelle) et collecter le filament extrudé. 
 
 
-## Etape 3 - Fabrication des Echantillons
-### Standard: Micro-compounding extrusion et injection
+## Étape 3 - Fabrication des Échantillons
+### Standard: Micro-compoundage et injection
 
-Le procédé de micro-compoundage a été sélectionné comme notre procédé de fabrication standard. Il fournit une base de comparaison entre les différents matériaux recyclés. 
+Le procédé de micro-compoundage a été sélectionné comme notre procédé de fabrication standard (Figure \@ref(fig:Compounding)) . Il fournit une base de comparaison entre les différents matériaux recyclés. 
 Les machines de cette type permettent de travailler avec une petite quantité de matériau (de 3 à 15 g) avec un historique de traitement similaire à celui des extrudeuses à double vis classiques.
 
 Le matériau polymère a été traité à l'aide d'un micro-compacteur discontinu à double vis co-rotatives à engrènement DSM Xplore d'une capacité de 5 cm3. Le diamètre de la vis de ce dispositif va en diminuant de 1 cm à 0,43 cm sur une longueur de 10,75 cm.
 
 Les paramètres adoptés sont une température constante de 180°C entre la gorge d'alimentation et la filière et une vitesse de vis de 100 tr/min en mode contre-rotatif. Le matériau extrudé a été prélevé après un temps de mélange de 3 minutes. Les températures de la matière fondue et du moule étaient respectivement de 190°C et 45°C. La matière fondue a été directement injectée à l'aide du cylindre de transfert de la machine de moulage par injection DSM Xplore 10 ml afin d'obtenir des échantillons mécaniques. Les pressions d'injection et de maintien ont été réglées à 9 bars pendant 30s. Les spécimens ont été soigneusement retirés du moule après 5 min de refroidissement.
 
+```{r Compounding, fig.cap="Procédé de micro-compoundage"}
+knitr::include_graphics("Figures/Compounding.jpg")
+```
 
-### Impression 3D: Fused Filament Fabrication (FFF)
+### 3D Printing: Fused Filament Fabrication (FFF)
 
 Comme mentionné préalablement, l’une des principales caractéristiques de l'impression 3D à code source ouvert est qu'elle a été un objet d'expérimentation sociale, où de nombreux passionnés et communautés ont développé un nombre important d'architectures de machines d'impression 3D [@Kostakis2013]. 
 Par conséquent, en raison de la nature hautement personnalisée, il existe différentes configurations de l'architecture de la machine, ce qui entraîne une variabilité inhérente entre les différentes imprimantes 3D.
@@ -388,11 +401,14 @@ Il est nécessaire de caractériser l'imprimante 3D open source afin d'assurer l
 
 La figure \@ref(ref:printers) présente les deux types d'imprimantes 3D sélectionnés pour la fabrication des échantillons dans cette étude. 
 
-```{r printers, fig.cap="Imprimantes Open source Foldara et Mondrian", fig.show='hold',  out.height= '200px', out.width= c('32%', '32%') }
-knitr::include_graphics(c(paste0(URL, 'AM/Printers/FFF/Foldarap-00.jpg'),
-                        paste0(URL, 'AM/Printers/FFF/Mondrian-00.jpg'))
-                        )
-#knitr::include_graphics("Figures/Francais/Recycling-Process-Chains.pdf")
+```{r printers, fig.cap="Imprimantes Open source Foldarap et Mondrian", out.height= '200px'}
+#knitr::include_graphics(c(paste0(URL, 'AM/Printers/FFF/Foldarap-00.jpg'),
+#                        paste0(URL, 'AM/Printers/FFF/Mondrian-00.jpg'))
+#                        )
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/AM/Printers/FFF/Foldarap-00.jpg", "Figures/Foldarap-00.jpg")
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/AM/Printers/FFF/Mondrian-00.jpg", "Figures/Mondrian-00.jpg")
+
+knitr::include_graphics("Figures/Machines.jpg")
 ```
 
  
@@ -403,16 +419,17 @@ Le lit d'impression chauffé est fait d'aluminium relié à une cellule Peltier 
 La figure \@ref(fig:parametros) montre les paramètres du processus à prendre en compte pour la fabrication des échantillons imprimés. Ils peuvent être définis comme suit : 
 
 ```{r parametros, fig.cap="Paramètres clés dans le processus d'impression.", out.width='80%'}
-knitr::include_graphics(paste0(URL, 'AM/Process/Parametros.png'))
-#knitr::include_graphics("Figures/Francais/Recycling-Process-Chains.pdf")
+#knitr::include_graphics(paste0(URL, 'AM/Process/Parametros.png'))
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/AM/Process/Parametros.png", "Figures/Parametros.png")
+knitr::include_graphics("Figures/Parametros.png")
 ```
 
 - **Direction de construction de la pièce** : Il s’agit de l’inclinaison de la pièce dans une plate-forme de construction par rapport aux axes X, Y et Z. Les axes X et Y sont considérés comme parallèles à la plate-forme de construction. L’axe Z est considéré comme l’axe d’impression. 
-- **Épaisseur de la couche** : Il s'agit de la hauteur de la couche déposée par la buse. Elle est généralement égale à la moitié de la largeur du cordon. 
+- **Épaisseur de la couche** : Il s'agit de la hauteur de la couche déposée par la buse.  
 - **Angle de remplissage** : Il s’agit de l’inclinaison des lignes de filament déposées par rapport à l’axe x de la table d’usinage. Les configurations typiques sont 90/90 et 45/45.
 - **Entrefer** : C'est l'espace entre deux filaments adjacents de matériau sur la même couche. Une valeur nulle signifie que les trames se touchent. Une valeur positive signifie qu'il y a un espace. Une valeur négative signifie que les trames se chevauchent.
 - **Nombre de contours** : Il définit le nombre de périmètres solides de l’objet. 
-- **Vitesse de la buse** : C'est la vitesse de la buse de l'imprimante lorsqu'elle fabrique l'objet. (Vitesse des périmètres, petits périmètres, périmètres externes, remplissage - couches solides, supérieures, inférieures)
+- **Vitesse de la tête d'impression** : C'est la vitesse de la buse de l'imprimante lorsqu'elle fabrique l'objet. (Vitesse des périmètres, petits périmètres, périmètres externes, remplissage - couches solides, supérieures, inférieures)
 
 
 
@@ -422,12 +439,12 @@ Par ailleurs les travaux de @CruzSanchez2014 ont montrés que des paramètres te
 D’autre part, si l’on considère les propriétés mécaniques du matériau dans la technologie de fabrication additive basée sur des systèmes extrudés, une conclusion importante de la littérature est qu’il existe un comportement anisotrope. 
 Cela signifie que les propriétés du matériau sont dépendantes de la direction. 
 L’intégrité mécanique de la pièce imprimée est directement liée à des facteurs tels que l’énergie d’adhésion/cohésion entre les couches et les couches déposées, la croissance de la zone de contact formée entre les couches adjacentes, la diffusion moléculaire et la randomisation des chaînes de polymères à travers l’interface, et un temps de résidence minimum à température élevée afin d’assurer des niveaux adéquats de liaison diffusive  
-[@AtifYardimci1996;@Yardimci1997,;@Agarwala1996;@Sun2008]. 
+[@AtifYardimci1996;@Yardimci1997;@Agarwala1996;@Sun2008]. 
 De plus, l'histoire thermique des interfaces joue un rôle important dans la détermination de la qualité du collage. Les cycles de chauffage et de refroidissement inégaux dus à la nature inhérente du processus d'impression entraînent une accumulation de contraintes dans la pièce construite, ce qui est principalement responsable de la faiblesse du collage et affecte donc la résistance. 
-Pour cette raison, il existe une dépendance des propriétés mécaniques [@Es-Said2000; @Ahn2002 ; @Bellini2003;] par rapport aux parcours d'outils et à l'orientation de la pièce. Par conséquent, les propriétés mécaniques sont fonction des paramètres de fabrication car elles affectent la méso-structure et la force de liaison entre les fibres [@Lee2005; @Lee2007, @Sood2010; @Sood2012; @Croccolo2013; @Tymrak2014a].
+Pour cette raison, il existe une dépendance des propriétés mécaniques [@Es-Said2000; @Ahn2002; @Bellini2003;] par rapport aux parcours d'outils et à l'orientation de la pièce. Par conséquent, les propriétés mécaniques sont fonction des paramètres de fabrication car elles affectent la méso-structure et la force de liaison entre les fibres [@Lee2005; @Lee2007; @Sood2010; @Sood2012; @Croccolo2013; @Tymrak2014a].
 
 
-## Etape 4 - Evaluation 
+## Étape 4 - Évaluation: Propriétés mécaniques 
 
 La norme ISO 597 est utilisée afin de déterminer les propriétés de traction du matériau recyclé. 
 L'éprouvette utilisée est la norme ISO 527 1B. 
@@ -436,12 +453,14 @@ Cette norme couvre les plastiques en tant que matériaux moulés, extrudés et c
 
 
 ```{r mechanical-sample, fig.cap="Eprouvette de caractérisation mécanique selon norme ISO 527 1B ", out.width='60%'}
-knitr::include_graphics(paste0(URL, 'Green-Fablab/14-Quality/Tensile/Sample/Dimensions-00.png'))
+#knitr::include_graphics(paste0(URL, 'Green-Fablab/14-Quality/Tensile/Sample/Dimensions-00.png'))
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Green-Fablab/14-Quality/Tensile/Sample/Dimensions-00.png", "Figures/Mechanical-sample.png")
+knitr::include_graphics("Figures/Mechanical-sample.png")
 ```
 
 
 
-## Etape 5 - Recyclage
+## Étape 5 - Recyclage
 
 La réduction de la taille des échantillons de chaque cycle de recyclage est nécessaire afin de retraiter le matériau.
 Une broyeuse SM 300 Retsch® avec une plage de vitesse sélectionnable de 700 à 3 000 rpm a été utilisée comme illustré dans la figure \@ref(fig:broyeur).
@@ -450,7 +469,9 @@ La granulométrie finale obtenue se situe dans une fourchette de 0,2 à 2 mm.
 
 
 ```{r broyeur, fig.cap="Chaînes de recyclage pour évaluer la dégradation du matériau.", out.width='60%'}
-knitr::include_graphics(paste0(URL, 'Green-Fablab/18-Recycling/Recycling-00.jpg'))
+#knitr::include_graphics(paste0(URL, 'Green-Fablab/18-Recycling/Recycling-00.jpg'))
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Green-Fablab/18-Recycling/Recycling-00.jpg", "Figures/Recycling-00.jpg")
+knitr::include_graphics("Figures/Recycling-00.jpg")
 ```
 
 
@@ -461,10 +482,13 @@ A partir des quatre chaînes de recyclage, il est possible de comparer la dégra
 La figure \@ref(fig:Samples) présente quelques exemples des échantillons fabriqués grâce à notre démarche expérimentale. 
 
 
-```{r Samples, fig.cap="Echantillons de la chaine de recyclage de References et de l'Impression 3D", out.height='200px', out.width= c('32%', '32%'), fig.subcap=c('Eprouvettes injectés', 'Eprouvettes imprimeés'), fig.show='hold'}
-knitr::include_graphics(c(paste0(URL, 'Thesis/Reference/Compounding_4.jpg'),
-                          paste0(URL, 'Thesis/3DP/Figure-11a.png'))
-                        )
+```{r Samples, fig.cap="Eprouvettes de la chaine de recyclage de Standard et de l'Impression 3D", out.height='400px'}
+#knitr::include_graphics(c(paste0(URL, 'Thesis/Reference/Compounding_4.jpg'),paste0(URL, 'Thesis/3DP/Figure-11a.png')))
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Thesis/Reference/Compounding_4.jpg", "Figures/Compounding_4.jpg")
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Thesis/3DP/Figure-11a.png", "Figures/Printed.jpg")
+
+knitr::include_graphics("Figures/Echantillons.jpg")
+
 ```
 
 Nous avons sélectionné 8 échantillons pour chaque chaîne de recyclage et chaque cycle afin d’assurer la reproductibilité des résultats. 
@@ -474,10 +498,15 @@ La différence entre ces deux procédés de fabrication est d’environ 10 *MPa*
 Cependant, cette différence augmente jusqu'à environ 20 *MPa* dans le cinquième cycle.
 
 
-```{r Ref-3DP, fig.cap="Propriétés mécaniques des pour les chaînes *Réference* et *3D Printing*", fig.subcap=c("Résistence à tension", "Module elastique"), out.width='45%', fig.show='hold'}
-knitr::include_graphics(c(paste0(URL, 'Thesis/fr/Ref-3DP-Tensile-Strength.jpg'),
-                          paste0(URL, 'Thesis/fr/Ref-3DP-Elastic-Modulus.jpg'))
-                        )
+```{r Ref-3DP, fig.cap="Propriétés mécaniques des pour les chaînes *Réference* et *3D Printing*", fig.subcap=c("Résistence à tension", "Module elastique"), out.width='100%'}
+# knitr::include_graphics(c(paste0(URL, 'Thesis/fr/Ref-3DP-Tensile-Strength.jpg'),
+#                           paste0(URL, 'Thesis/fr/Ref-3DP-Elastic-Modulus.jpg'))
+#                         )
+
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Thesis/fr/Ref-3DP-Tensile-Strength.jpg", "Figures/Ref-3DP-Tensile-Strength.jpg")
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Thesis/fr/Ref-3DP-Elastic-Modulus.jpg", "Figures/Ref-3DP-Elastic-Modulus.jpg")
+
+knitr::include_graphics("Figures/Resultas-1.jpg")
 ```
 
 
@@ -503,10 +532,16 @@ Nous pouvons constater qu'il existe un effet de l'impression 3D sur le matériau
 Il est négligeable quand la matière est vierge, par contre, cette influence augmente au fur et à mesure que le matériau est de plus en plus dégradé. Il est important d'analyser ces résultats d'un point de vue chimique afin de caractériser la dégradation au niveau microscopique.
 
 
-```{r Feed-3DP, fig.cap="Valeurs moyennes de résistance à la traction et module de elastiue pour les chaînes *Feedstock* et *3D printing (Réference)", out.width='45%', fig.subcap=c("A", "B"), fig.show='hold'}
-knitr::include_graphics(c(paste0(URL, 'Thesis/fr/Fed-3DP-Tensile-Strength.jpg'),
-                          paste0(URL, 'Thesis/fr/Fed-3DP-Elastic-Modulus.jpg'))
-                        )
+```{r Feed-3DP, fig.cap="Valeurs moyennes de résistance à la traction et module de elastiue pour les chaînes *Feedstock* et *3D printing (Réference)", out.width='100%'}
+# knitr::include_graphics(c(paste0(URL, 'Thesis/fr/Fed-3DP-Tensile-Strength.jpg'),
+#                           paste0(URL, 'Thesis/fr/Fed-3DP-Elastic-Modulus.jpg'))
+#                         )
+
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Thesis/fr/Fed-3DP-Tensile-Strength.jpg", "Figures/Fed-3DP-Tensile-Strength.jpg")
+#download.file("https://raw.githubusercontent.com/fabbiocrux/Figures/main/Thesis/fr/Fed-3DP-Elastic-Modulus.jpg", "Figures/Fed-3DP-Elastic-Modulus.jpg")
+
+knitr::include_graphics("Figures/Resultas-1.jpg")
+
 ```
 
 
